@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Fighter</title>
+    <link rel="stylesheet" href="/juegoCAr/road.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio id="menuMusic" loop>
+        <source src="/Double_Dragon_NES_-City_Slum_[_YouConvert.net_].mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
+    <audio id="gameMusic" loop>
+        <source src="/Double_Dragon_NES_-City_Slum_[_YouConvert.net_].mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
+    
+    <div id="menu">
+        <h1>Bienvenido a Action Fighter</h1>
+        <button id="startButton">Empezar</button>
+        <button id="howToPlayButton">¿Cómo se juega?</button>
+        <svg id="muteButton" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" style="position: absolute; bottom: 10px; right: 10px; cursor: pointer;">
+            <path d="M12 3v3H9v4H5v3h4v4h3v3h3v-3h4v-3h-4v-4h-3V3z" fill="#000" />
+        </svg>
+    </div>
+
+    <!-- Ventana Modal retro para ¿Cómo se juega? -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Instrucciones</h2>
+            <p>Usa las flechas izquierda (<code>&larr;</code>) y derecha (<code>&rarr;</code>) o las teclas "A" y "D" para mover el carrito.</p>
+            <div id="carAnimation" class="animation-container">
+                <!-- Carrito animado -->
+                <img src="./imagenes/carroP.png" id="animatedCar" alt="Carrito">
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Agregar marcador de puntuación -->
+    <div id="scoreboard">
+        Puntuación: <span id="score">0</span>
+    </div>
+<!-- Ventana Modal retro para Pausa -->
+<div id="pauseModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span id="closePauseModal" class="close">&times;</span>
+        <h2>Juego Pausado</h2>
+        <button id="continueButton">Continuar</button>
+    </div>
+</div>
+    
+    <canvas id="gameCanvas" width="800" height="600" style="display: none;"></canvas>
+
+    <!-- Scripts -->
+    <script src="/juegoCAr/scripts/manejodeCyS.js"></script>
+    <script src="/juegoCAr/scripts/carroPrincipal.js"></script>
+    <script src="/juegoCAr/scripts/enemigos.js"></script>
+    <script src="/juegoCAr/scripts/choque.js"></script>
+    <script src="/juegoCAr/scripts/menu.js"></script>
+</body>
+</html>
